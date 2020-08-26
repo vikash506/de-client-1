@@ -1,0 +1,14 @@
+button {
+    outline: 0px;
+    padding: 3px 20px;
+    background: lighten(#333, 0%);
+    color: white;
+    box-shadow: 0px 0px 0px black;
+    &:hover {
+        color: darken($color: white, $amount: 20%);
+    }
+}
+.active {
+    background: #4b0082;
+    
+}

@@ -1,0 +1,7 @@
+<section class="a-container">
+    <div class="container">
+        <app-page-title title="Registration Form" *ngIf="!isSmallScreen"></app-page-title>
+        <app-btn-push [btns]="tabs" *ngIf="!isSmallScreen"></app-btn-push>
+        <router-outlet></router-outlet>
+    </div>
+</section>

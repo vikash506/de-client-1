@@ -1,0 +1,60 @@
+<p>
+    <mat-toolbar color="primary">
+        <button mat-raised-button color="primary" routerLink="/"><span style="color: red">Dummy</span>
+            Enterprises</button>
+        <span class="spacer"></span>
+        <span class="large" *ngIf="!isSmallScreen">
+            <button mat-button routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                [routerLink]="['/']">
+                HOME
+            </button>
+            <button mat-button routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                [routerLink]="['/about']">
+                ABOUT US
+            </button>
+            <button mat-button routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                [routerLink]="['/registration']" *ngIf="!loggedIn">
+                REGISTER
+            </button>
+            <button mat-button routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                [routerLink]="['/login']" *ngIf="!loggedIn">
+                LOGIN
+            </button>
+            <span *ngIf="loggedIn">
+                <button mat-icon-button [matMenuTriggerFor]="beforeMenu">
+                    <mat-icon aria-hidden="false">person_pin</mat-icon>
+                </button>
+                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                    <button mat-menu-item [routerLink]="['/update-info/dashboard']">DASHBOARD</button>
+                    <button mat-menu-item (click)="logout()">LOGOUT</button>
+                </mat-menu>
+            </span>
+        </span>
+
+        <span class="small" *ngIf="isSmallScreen">
+            <button mat-icon-button [matMenuTriggerFor]="beforeMenu">
+                <mat-icon aria-hidden="false">menu</mat-icon>
+            </button>
+            <mat-menu #beforeMenu="matMenu" xPosition="before">
+                <button mat-menu-item [routerLink]="['/']">Home</button>
+                <button mat-menu-item [routerLink]="['/about']">About Us</button>
+                <button *ngIf="!loggedIn" mat-menu-item [routerLink]="['/registration']">Register</button>
+                <button *ngIf="!loggedIn" mat-menu-item [routerLink]="['/login']">Login</button>
+                <button *ngIf="loggedIn" mat-menu-item [routerLink]="['/update-info/personal']">Personal
+                    Information</button>
+                <button *ngIf="loggedIn" mat-menu-item [routerLink]="['/update-info/academic']">Academic
+                    Information</button>
+                <button *ngIf="loggedIn" mat-menu-item [routerLink]="['/update-info/professional']">Professional
+                    Informaiton</button>
+                <button *ngIf="loggedIn" mat-menu-item [routerLink]="['/update-info/bank-account']">Bank Information</button>
+                <button *ngIf="loggedIn" mat-menu-item [routerLink]="['/update-info/declaration']">Declaration</button>
+                <button *ngIf="loggedIn" mat-menu-item [routerLink]="['/update-info/dashboard']">DASHBOARD</button>
+                <button *ngIf="loggedIn" mat-menu-item (click)="logout()">LOGOUT</button>
+            </mat-menu>
+        </span>
+
+
+    </mat-toolbar>
+</p>
+
+<!-- header.component.html -->

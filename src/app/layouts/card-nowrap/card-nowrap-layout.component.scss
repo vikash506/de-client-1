@@ -1,0 +1,17 @@
+.card {
+    //background: darken($color: white, $amount: 10%);
+    box-shadow: 2px 2px 1px #bbbbbb;
+    // image for the card, used as a background
+    img {
+        height: 200px;
+    }
+    // content of the card
+    .card-body {
+        .car-title {
+        }
+        .card-text {
+        }
+        .btn {
+        }
+    }
+}

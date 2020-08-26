@@ -1,0 +1,33 @@
+<section>
+    <div class="container col-lg-4 col-md-8 col-sm-12">
+        <div>
+            <app-page-title title="{{ title }}"></app-page-title>
+            <form #loginForm='ngForm' (ngSubmit)="login(loginForm.value)">
+                <br />
+                <div>
+
+                    <!-- Mobile Nu. for logging-->
+                    <div class="form-group">
+                        <input type="text" pattern="[0-9]*" class="form-control" placeholder="Mobile" name="mobile"
+                            #mobile="ngModel" minlength="10" maxlength="10" ngModel required
+                            (keyup)="checkError(mobile)">
+                        <div class="error" *ngIf="mobile.invalid && mobile.dirty && mobile.touched">
+                            {{ errMobile }}
+                        </div>
+                    </div>
+
+                    <!-- Password for logging-->
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Password" name="password" ngModel>
+                    </div>
+                    <br />
+
+                    <!-- Submit button for loggign-->
+                    <div class="align-center">
+                        <button mat-raised-button type="submit" class="form-control">Login</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
